@@ -4,8 +4,10 @@ public class Main {
 		LoginView vis=new LoginView();
 		Login log=new Login();
 		SegreteriaView seView=new SegreteriaView();
-		SegreteriaController seCtrl=new SegreteriaController(seView);
-		LoginController l=new LoginController(vis,log,seView,seCtrl);
+		tipoArticoloView artView=new tipoArticoloView();
+		SegreteriaController seCtrl=new SegreteriaController(seView,artView);
+		
+		LoginController l=new LoginController(vis,log,seView,seCtrl,artView);
 		l.updateView(true);
 	}
 

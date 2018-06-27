@@ -10,15 +10,17 @@ public class LoginController implements ActionListener{
 	LoginView vista;
 	SegreteriaView seView;
 	SegreteriaController seCtrl;
+	tipoArticoloView artView;
 	Login log;
 	String user="";
 	String UserPassEntr;
 	
-	public LoginController(LoginView vista,Login log,SegreteriaView seView,SegreteriaController seCtrl) {
+	public LoginController(LoginView vista,Login log,SegreteriaView seView,SegreteriaController seCtrl,tipoArticoloView artView) {
 		this.vista=new LoginView();
 		this.log=new Login();
 		this.seView=new SegreteriaView();
-	    this.seCtrl=new SegreteriaController(seView);
+		this.artView=new tipoArticoloView();
+	    this.seCtrl=new SegreteriaController(seView,artView);
 		
 	}
 	
