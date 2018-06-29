@@ -64,6 +64,16 @@ public class LoginView extends JFrame{
 	  p1.setEnabled(false);
 	 
 	 }
+	 
+	 public void addActionListener(ActionListener e) {
+		
+		 btn1.addActionListener(e);
+		 segreteria.addActionListener(e);
+		 magazzino.addActionListener(e);
+		 gestoreMagazzino.addActionListener(e);
+		 
+	 }
+
 	
 	
 	

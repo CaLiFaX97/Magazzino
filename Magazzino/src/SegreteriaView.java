@@ -1,4 +1,6 @@
 import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +33,12 @@ public class SegreteriaView extends JFrame {
 		 
 		  frame.setSize(400, 400);
 		  frame.setLayout(null);
+	 }
+	 
+	 
+	 public void addActionListener(ActionListener e) {
+		 btn1.addActionListener(e);
+		 btn2.addActionListener(e);
 	 }
 
 }

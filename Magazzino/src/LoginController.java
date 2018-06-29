@@ -27,10 +27,7 @@ public class LoginController implements ActionListener{
 	public void updateView(boolean vision) {
 		
 		vista.frame.setVisible(vision);
-		vista.btn1.addActionListener(this); 
-		vista.segreteria.addActionListener(this);
-		vista.magazzino.addActionListener(this);
-		vista.gestoreMagazzino.addActionListener(this);
+		vista.addActionListener(this); 
 	}
 	
 	public void actionPerformed(ActionEvent event) {

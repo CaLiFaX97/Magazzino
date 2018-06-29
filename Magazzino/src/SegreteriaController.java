@@ -11,7 +11,7 @@ public class SegreteriaController implements ActionListener{
 	
 	public void updateView() {
 		seView.frame.setVisible(true);
-		seView.btn1.addActionListener(this);
+		seView.addActionListener(this);
 		artView.addActionListener(this);
 		
 	}
@@ -26,6 +26,17 @@ public class SegreteriaController implements ActionListener{
 			seView.frame.setVisible(true);
 			artView.frame.setVisible(false);
 		}
+		
+		if(event.getSource() == artView.btn1) {
+			artView.tf2.getText();
+			
+		}
+		
+		if(event.getSource() == seView.btn2) {
+			seView.frame.setVisible(true);
+			seView.frame.setVisible(false);
+		}
+		
 		
 	}
 
