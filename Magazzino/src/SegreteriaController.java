@@ -5,10 +5,11 @@ public class SegreteriaController implements ActionListener{
 	SegreteriaView seView=new SegreteriaView();
 	tipoArticoloView artView=new tipoArticoloView();
 	tipoArticolo obj=new tipoArticolo("","",100);
-	Magazziniere mg=new Magazziniere();
+	Magazziniere mg;
 	String stringa="";
 	int prezzo;
-	public SegreteriaController() {	
+	public SegreteriaController(Magazziniere mg) {	
+		this.mg=Magazziniere.getInstance();
 		
 		
 	}
@@ -58,7 +59,6 @@ public class SegreteriaController implements ActionListener{
 			
 			
 			mg.addValueList(obj);
-			
 			
 			
 			

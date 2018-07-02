@@ -3,15 +3,22 @@ import java.util.ArrayList;
 public class Magazziniere {
 	private ArrayList prodotti=new ArrayList();
 	tipoArticolo art1;
+	private static Magazziniere mag = null;
 	
-	public  Magazziniere() {
+	public Magazziniere() {
 		
 	}
 	
+	
 	public void addValueList(tipoArticolo art) {
-		prodotti.add(new tipoArticolo(art.nomArt,art.desc,art.prezzo));
-		System.out.println(prodotti.size());		
+		prodotti.add(new tipoArticolo(art.nomArt,art.desc,art.prezzo));	
 	}
+	
+	 public static Magazziniere getInstance( ) {
+	      if (mag == null)
+	          mag=new Magazziniere();
+	      return mag;
+	   }
 	
 	public void seeList() {
 		System.out.println("Oggetti inseriti:");

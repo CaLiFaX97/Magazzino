@@ -2,14 +2,15 @@ import java.util.ArrayList;
 
 public class MagazziniereController {
 	tipoArticolo prod;
-	SegreteriaController segCrtl=new SegreteriaController();
-	Magazziniere mag = new Magazziniere ();
+	Magazziniere mg;
+	SegreteriaController segCrtl=new SegreteriaController(mg);
 		
 	
 	
 	
-	public MagazziniereController(tipoArticolo prod) {
+	public MagazziniereController(tipoArticolo prod,Magazziniere mg) {
 		this.prod=segCrtl.objVal();
+		this.mg=mg;
 		
 	}
 	

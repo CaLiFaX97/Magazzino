@@ -1,10 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
-
-import javax.swing.JOptionPane;
-
-import javafx.scene.control.TextField;
 
 public class LoginController implements ActionListener{
 	LoginView vista;
@@ -14,13 +9,15 @@ public class LoginController implements ActionListener{
 	Login log;
 	String user="";
 	String UserPassEntr;
+	Magazziniere mg=new Magazziniere();
 	
-	public LoginController(LoginView vista,Login log,SegreteriaView seView,SegreteriaController seCtrl,tipoArticoloView artView) {
-		this.vista=new LoginView();
-		this.log=new Login();
-		this.seView=new SegreteriaView();
-		this.artView=new tipoArticoloView();
-	    this.seCtrl=new SegreteriaController();
+	
+	public LoginController() {
+		vista=new LoginView();
+		log=new Login();
+		seView=new SegreteriaView();
+		artView=new tipoArticoloView();
+	    seCtrl=new SegreteriaController(Magazziniere.getInstance());
 		
 	}
 	
