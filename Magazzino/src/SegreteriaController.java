@@ -2,17 +2,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SegreteriaController implements ActionListener{
-	SegreteriaView seView;
-	tipoArticoloView artView;
-	public SegreteriaController(SegreteriaView seView,tipoArticoloView artView) {
-		this.seView=new SegreteriaView();
-		this.artView=new tipoArticoloView();
+	SegreteriaView seView=new SegreteriaView();
+	tipoArticoloView artView=new tipoArticoloView();
+	tipoArticolo obj=new tipoArticolo("","",100);
+	Magazziniere mg=new Magazziniere();
+	String stringa="";
+	int prezzo;
+	public SegreteriaController() {	
+		
+		
 	}
 	
 	public void updateView() {
 		seView.frame.setVisible(true);
 		seView.addActionListener(this);
 		artView.addActionListener(this);
+		
+	}
+	public tipoArticolo objVal() {
+		return obj;
 		
 	}
 	
@@ -28,13 +36,38 @@ public class SegreteriaController implements ActionListener{
 		}
 		
 		if(event.getSource() == artView.btn1) {
-			artView.tf2.getText();
+			if(!artView.tf2.getText().equals("")) {
+				stringa=artView.tf2.getText();
+				obj.nomArt=stringa;
+						
+			}
+			
+			if(!artView.tf3.getText().equals("")) {
+				stringa=artView.tf3.getText();
+				obj.desc=stringa;
+			}
+			
+			if(!artView.tf4.getText().equals("")) {
+				stringa=artView.tf4.getText();	
+				prezzo=Integer.parseInt(stringa);	
+				obj.prezzo=prezzo;
+			}
+			artView.tf2.setText("");
+			artView.tf3.setText("");
+			artView.tf4.setText("");
+			
+			
+			mg.addValueList(obj);
+			
+			
+			
 			
 		}
 		
 		if(event.getSource() == seView.btn2) {
-			seView.frame.setVisible(true);
-			seView.frame.setVisible(false);
+			mg.seeList();
+			
+			
 		}
 		
 		

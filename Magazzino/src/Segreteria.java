@@ -1,15 +1,15 @@
+import java.util.ArrayList;
 
 public class Segreteria {
-	private String[]oggetto=new String[10];
-	private double[]prezzo=new double[10];
+	tipoArticolo art;
+	SegreteriaController segCtrl=new SegreteriaController();
+
+	tipoArticolo ogg=segCtrl.objVal();
+	ArrayList arrayArt=new ArrayList();
+	
 	public Segreteria() {
 		
 	}
-	public double getPrezzo(int pos) {
-		return prezzo[pos];
-	}
-	public String getOrdine(int pos) {
-		return oggetto[pos];
-	}
+	
 
 }

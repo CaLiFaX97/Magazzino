@@ -5,7 +5,7 @@ public class Main {
 		Login log=new Login();
 		SegreteriaView seView=new SegreteriaView();
 		tipoArticoloView artView=new tipoArticoloView();
-		SegreteriaController seCtrl=new SegreteriaController(seView,artView);
+		SegreteriaController seCtrl=new SegreteriaController();
 		
 		LoginController l=new LoginController(vis,log,seView,seCtrl,artView);
 		l.updateView(true);

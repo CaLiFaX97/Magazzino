@@ -20,7 +20,7 @@ public class LoginController implements ActionListener{
 		this.log=new Login();
 		this.seView=new SegreteriaView();
 		this.artView=new tipoArticoloView();
-	    this.seCtrl=new SegreteriaController(seView,artView);
+	    this.seCtrl=new SegreteriaController();
 		
 	}
 	
