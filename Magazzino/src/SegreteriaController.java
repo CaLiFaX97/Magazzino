@@ -5,11 +5,13 @@ public class SegreteriaController implements ActionListener{
 	SegreteriaView seView=new SegreteriaView();
 	tipoArticoloView artView=new tipoArticoloView();
 	tipoArticolo obj=new tipoArticolo("","",100);
-	Magazziniere mg;
+	LoginController logCtrl;
 	String stringa="";
 	int prezzo;
+	Magazziniere mg;
 	public SegreteriaController(Magazziniere mg) {	
-		this.mg=Magazziniere.getInstance();
+	
+		this.mg=mg;
 		
 		
 	}
@@ -26,6 +28,7 @@ public class SegreteriaController implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent event) {
+
 		if(event.getSource() == seView.btn1) {
 			seView.frame.setVisible(false);
 			artView.frame.setVisible(true);
@@ -59,6 +62,7 @@ public class SegreteriaController implements ActionListener{
 			
 			
 			mg.addValueList(obj);
+			mg.NumberOfTypes();
 			
 			
 			
@@ -67,6 +71,13 @@ public class SegreteriaController implements ActionListener{
 		if(event.getSource() == seView.btn2) {
 			mg.seeList();
 			
+			
+		}
+		
+		if(event.getSource()==seView.btn4) {
+			logCtrl=new LoginController();
+			seView.frame.setVisible(false);
+			logCtrl.updateView(true);
 			
 		}
 		

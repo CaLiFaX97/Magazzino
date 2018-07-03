@@ -3,7 +3,9 @@ import java.util.ArrayList;
 public class MagazziniereController {
 	tipoArticolo prod;
 	Magazziniere mg;
+	LoginController logCtrl;
 	SegreteriaController segCrtl=new SegreteriaController(mg);
+	
 		
 	
 	

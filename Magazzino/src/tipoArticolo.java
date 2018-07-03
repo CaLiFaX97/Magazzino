@@ -10,4 +10,11 @@ public class tipoArticolo {
 		this.nomArt=nomArt;
 		this.desc=desc;
 	}
+	
+	public String toString() {
+		String stringa=nomArt+";"+desc+";"+prezzo;
+		return stringa;
+		
+	}
+	
 }

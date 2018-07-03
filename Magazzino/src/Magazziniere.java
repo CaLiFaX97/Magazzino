@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 public class Magazziniere {
-	private ArrayList prodotti=new ArrayList();
+	public ArrayList prodotti=new ArrayList();
 	tipoArticolo art1;
+	int numOrd=0;
 	private static Magazziniere mag = null;
 	
 	public Magazziniere() {
@@ -12,6 +13,10 @@ public class Magazziniere {
 	
 	public void addValueList(tipoArticolo art) {
 		prodotti.add(new tipoArticolo(art.nomArt,art.desc,art.prezzo));	
+	}
+	public void NumberOfTypes() {
+		numOrd++;
+		
 	}
 	
 	 public static Magazziniere getInstance( ) {

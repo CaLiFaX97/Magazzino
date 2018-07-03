@@ -2,11 +2,13 @@ import java.util.ArrayList;
 
 public class Segreteria {
 	tipoArticolo art;
-	SegreteriaController segCtrl=new SegreteriaController(Magazziniere.getInstance());
+	Magazziniere mg;
+	SegreteriaController segCtrl=new SegreteriaController(mg);
 	tipoArticolo ogg=segCtrl.objVal();
 	ArrayList arrayArt=new ArrayList();
 	
-	public Segreteria() {
+	public Segreteria(Magazziniere mg) {
+		this.mg=mg;
 		
 		
 		

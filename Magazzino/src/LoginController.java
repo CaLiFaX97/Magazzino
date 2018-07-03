@@ -9,7 +9,8 @@ public class LoginController implements ActionListener{
 	Login log;
 	String user="";
 	String UserPassEntr;
-	Magazziniere mg=new Magazziniere();
+	Magazziniere mg;
+	NegozioController ng;
 	
 	
 	public LoginController() {
@@ -17,7 +18,9 @@ public class LoginController implements ActionListener{
 		log=new Login();
 		seView=new SegreteriaView();
 		artView=new tipoArticoloView();
-	    seCtrl=new SegreteriaController(Magazziniere.getInstance());
+		this.mg = Magazziniere.getInstance();
+	    seCtrl=new SegreteriaController(mg);
+	    ng=new NegozioController(mg);
 		
 	}
 	
@@ -60,11 +63,28 @@ public class LoginController implements ActionListener{
         	 }
         	 }
          }
-         else {
+         
+         else if(vista.negozio.isSelected()) {
         	 user=log.getUtenti(2);
         	 vista.p1.setEnabled(true);
         	 if(event.getSource() == vista.btn1) {
         	 if(UserPassEntr.equals(log.getPassword(2))) {
+        		 vista.tf1.setText("PSW corretta");
+        		 vista.frame.setVisible(false);
+        		 ng.updateView();
+        		 ng.addComboBox();
+        		 
+        	 }
+        	 else {
+        		 vista.tf1.setText("PSW errata");
+        	 }
+        	 }
+         }
+         else {
+        	 user=log.getUtenti(3);
+        	 vista.p1.setEnabled(true);
+        	 if(event.getSource() == vista.btn1) {
+        	 if(UserPassEntr.equals(log.getPassword(3))) {
         		 vista.tf1.setText("PSW corretta");
         	 }
         	 else {

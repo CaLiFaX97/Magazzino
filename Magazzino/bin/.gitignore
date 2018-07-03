@@ -1,13 +1,3 @@
-/Login.class
-/LoginController.class
-/LoginView.class
-/Main.class
-/Magazziniere.class
-/MagazziniereController.class
-/MagazziniereView.class
-/SegreteriaView.class
-/Segreteria.class
-/SegreteriaController.class
-/aggiungiArticolo.class
-/tipoArticoloView.class
-/tipoArticolo.class
+/Negozio.class
+/NegozioView.class
+/NegozioController.class

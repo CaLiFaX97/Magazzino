@@ -1,7 +1,7 @@
 
 public class Login {
-	private final String[]utenti= {"Segreteria","Magazzino","GestoreMagazzino"};
-	private String[] password= {"Ciao","1234","pippo"};
+	private final String[]utenti= {"Segreteria","Magazzino","Negozio","GestoreMagazzino"};
+	private String[] password= {"Ciao","1234","negozio","pippo"};
 	
 	
 	
