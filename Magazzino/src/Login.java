@@ -8,7 +8,7 @@ public class Login {
 		return utenti[pos];
 	
 	}
-	//asino dio
+	
 	public String getPassword(int pos) {
 		return password[pos];
 		
