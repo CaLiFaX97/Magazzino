@@ -9,7 +9,7 @@ public class Login {
 		return utenti[pos];
 	
 	}
-	
+	//dio wurtsel
 	public String getPassword(int pos) {
 		return password[pos];
 		
