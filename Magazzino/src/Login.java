@@ -4,7 +4,6 @@ public class Login {
 	private String[] password= {"Ciao","1234","negozio","pippo"};
 	
 	
-	diocane
 	public String getUtenti(int pos) {
 		return utenti[pos];
 	
