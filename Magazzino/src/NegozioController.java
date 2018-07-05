@@ -1,10 +1,11 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 public class NegozioController implements ActionListener {
 	NegozioView ngView;
 	Magazziniere mg;
-	int quant;
 	public NegozioController(Magazziniere mg) {
 		this.mg=mg;
 		ngView=new NegozioView(mg);
@@ -25,10 +26,9 @@ public class NegozioController implements ActionListener {
 	}
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource()==ngView.btn1) {
-			quant=(Integer) ngView.quantita.getSelectedItem();
-			
+			int quant=(Integer) (ngView.quantita.getSelectedItem());
+			JOptionPane.showMessageDialog(null, "Quantita' selezionata"+" = "+quant);
 			}
-		System.out.println(quant);
 		}
 	}
 

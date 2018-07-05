@@ -11,7 +11,7 @@ public class NegozioView extends JFrame{
 	 JButton btn1;
 	String title;
 	 JFrame frame;
-	 String[] qu = {"1","2","3","4","5"};
+	 int[] qu = {1,2,3,4,5,6,7,8,9};
 
 
 	 JComboBox listOrdini,quantita;
@@ -27,7 +27,10 @@ public class NegozioView extends JFrame{
 		 
 		  l3 = new JLabel();
 		  listOrdini=new JComboBox();
-		  quantita=new JComboBox(qu);
+		  quantita=new JComboBox();
+		  for(int i=0;i<qu.length;i++) {
+		  	quantita.addItem(qu[i]);
+		  }
 		  
 		
 		  btn1 = new JButton("Inserimento Ordine Articoli");
