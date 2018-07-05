@@ -1,7 +1,10 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class NegozioController {
+public class NegozioController implements ActionListener {
 	NegozioView ngView;
 	Magazziniere mg;
+	int quant;
 	public NegozioController(Magazziniere mg) {
 		this.mg=mg;
 		ngView=new NegozioView(mg);
@@ -10,6 +13,7 @@ public class NegozioController {
 	
 	public void updateView() {
 		ngView.frame.setVisible(true);
+		ngView.addActionListener(this);
 		
 	}
 	
@@ -19,4 +23,13 @@ public class NegozioController {
 		}
 
 	}
-}
+	public void actionPerformed(ActionEvent event) {
+		if(event.getSource()==ngView.btn1) {
+			quant=(Integer) ngView.quantita.getSelectedItem();
+			
+			}
+		System.out.println(quant);
+		}
+	}
+
+

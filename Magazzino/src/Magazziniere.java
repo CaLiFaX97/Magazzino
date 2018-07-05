@@ -1,13 +1,15 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Magazziniere {
-	public ArrayList prodotti=new ArrayList();
+	public ArrayList<tipoArticolo> prodotti=new ArrayList<tipoArticolo>();
+	tipoArticolo art;
+	int quantita=0;
+	HashMap<tipoArticolo, Integer> hmap = new HashMap<tipoArticolo, Integer>();
 	tipoArticolo art1;
 	int numOrd=0;
 	String today;
@@ -15,7 +17,6 @@ public class Magazziniere {
 	java.util.Date date;
 	String strDate;
 	static int i=0;
-	Negozio neg=new Negozio();
 	private static Magazziniere mag = null;
 	
 	public Magazziniere() {

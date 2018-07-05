@@ -1,5 +1,5 @@
-import java.awt.TextField;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -9,9 +9,15 @@ import javax.swing.JLabel;
 public class NegozioView extends JFrame{
 	JLabel l3;
 	 JButton btn1;
+	String title;
 	 JFrame frame;
-	 JComboBox listOrdini;
+	 String[] qu = {"1","2","3","4","5"};
+
+
+	 JComboBox listOrdini,quantita;
+	
 	 Magazziniere mg;
+	 
 	 public  NegozioView(Magazziniere mg) {
 		 this.mg=mg;
 		 
@@ -19,23 +25,28 @@ public class NegozioView extends JFrame{
 		 
 		 frame=new JFrame("Segreteria");
 		 
-		  l3 = new JLabel("Negozio");
+		  l3 = new JLabel();
 		  listOrdini=new JComboBox();
+		  quantita=new JComboBox(qu);
+		  
+		
 		  btn1 = new JButton("Inserimento Ordine Articoli");
 		  
 		 
 		  l3.setBounds(200, 80, 200, 30);
-		  listOrdini.setBounds(120,120,200,30);
+		  listOrdini.setBounds(30,120,370,20);
+		  quantita.setBounds(400,120,60,20);
 		  btn1.setBounds(120, 160, 200, 20);
 		  
 		  
 		  frame.add(l3);
 		  frame.add(listOrdini);
+		  frame.add(quantita);
 		  frame.add(btn1);
 		
 		  
 		 
-		  frame.setSize(400, 400);
+		  frame.setSize(800, 400);
 		  frame.setLayout(null);
 	 }
 	 

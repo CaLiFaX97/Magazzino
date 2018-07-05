@@ -3,17 +3,25 @@ import java.awt.event.ActionListener;
 
 public class SegreteriaController implements ActionListener{
 	SegreteriaView seView=new SegreteriaView();
+	Segreteria seg;
 	tipoArticoloView artView=new tipoArticoloView();
 	tipoArticolo obj=new tipoArticolo("","",100);
+	Negozio neg= new Negozio("SportPrinc","via roma","Verona","ANDREA1");
+	Negozio neg1= new Negozio("Sport1","via roma","Verona","ANDREA2");
+	Negozio neg2= new Negozio("Sport2","via roma","Verona","ANDREA3");
 	LoginController logCtrl;
 	String stringa="";
 	int prezzo;
 	OrderTableView tab;
 	Magazziniere mg;
-	public SegreteriaController(Magazziniere mg) {	
+	
+	public SegreteriaController(Magazziniere mg,Segreteria seg) {	
 		this.tab=new OrderTableView();
 		this.mg=mg;
-		
+		this.seg=seg;
+		seg.addNeg(neg);
+		seg.addNeg(neg1);
+		seg.addNeg(neg2);
 		
 	}
 	
@@ -33,6 +41,7 @@ public class SegreteriaController implements ActionListener{
 		if(event.getSource() == seView.btn1) {
 			seView.frame.setVisible(false);
 			artView.frame.setVisible(true);
+			
 			
 		}
 		if(event.getSource() == artView.btn2) {
@@ -75,6 +84,13 @@ public class SegreteriaController implements ActionListener{
 			tab.frame.setVisible(true);
 			
 			
+			
+			
+		}
+		
+		if(event.getSource()==seView.btn3) {
+			
+			seg.seeNeg();
 			
 			
 		}

@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class LoginController implements ActionListener{
 	LoginView vista;
@@ -11,15 +12,18 @@ public class LoginController implements ActionListener{
 	String UserPassEntr;
 	Magazziniere mg;
 	NegozioController ng;
+	Segreteria seg;
+	ArrayList<Negozio> codNeg;
 	
 	
 	public LoginController() {
 		vista=new LoginView();
 		log=new Login();
+		this.seg=new Segreteria(mg);
 		seView=new SegreteriaView();
 		artView=new tipoArticoloView();
 		this.mg = Magazziniere.getInstance();
-	    seCtrl=new SegreteriaController(mg);
+	    seCtrl=new SegreteriaController(mg,seg);
 	    ng=new NegozioController(mg);
 		
 	}
@@ -65,18 +69,23 @@ public class LoginController implements ActionListener{
          }
          
          else if(vista.negozio.isSelected()) {
+        	 codNeg=seg.getNegozio();
         	 user=log.getUtenti(2);
         	 vista.p1.setEnabled(true);
         	 if(event.getSource() == vista.btn1) {
-        	 if(UserPassEntr.equals(log.getPassword(2))) {
+        		 for(int i=0;i<codNeg.size();i++) {
+        	 if(UserPassEntr.equals(codNeg.get(i).codResponsabile)) {
         		 vista.tf1.setText("PSW corretta");
         		 vista.frame.setVisible(false);
+        		 ng.ngView.l3.setText(codNeg.get(i).nomNeg);
         		 ng.updateView();
         		 ng.addComboBox();
         		 
         	 }
+        		 
         	 else {
         		 vista.tf1.setText("PSW errata");
+        	 }
         	 }
         	 }
          }

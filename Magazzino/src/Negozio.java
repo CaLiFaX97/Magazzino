@@ -1,15 +1,34 @@
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.TimeZone;
 
+import java.lang.Math;
 public class Negozio {
+	String nomNeg="";
+	String sede="";
+	String addrNeg="";
+	String codResponsabile="";
+	int cod;
 	
-	public Negozio() {
+	public Negozio(String nomNeg,String sede,String addrNeg,String codResponsabile) {
+		this.nomNeg=nomNeg;
+		this.sede=sede;
+		this.addrNeg=addrNeg;
+		this.codResponsabile=codResponsabile;
+		cod = Math.abs(hashCode());
+		
 		
 	}
+	
+	public String toString() {
+		String s= nomNeg+" "+sede+" "+addrNeg+" "+codResponsabile;
+		return s;
+		
+	}
+	
+	@Override
+	public int hashCode() {
+		
+		return nomNeg.hashCode()^sede.hashCode()^addrNeg.hashCode()^codResponsabile.hashCode();
+	}
+
 	
 	
 

@@ -3,8 +3,9 @@ import java.util.ArrayList;
 public class MagazziniereController {
 	tipoArticolo prod;
 	Magazziniere mg;
+	Segreteria seg;
 	LoginController logCtrl;
-	SegreteriaController segCrtl=new SegreteriaController(mg);
+	SegreteriaController segCrtl=new SegreteriaController(mg,seg);
 	
 		
 	
@@ -16,9 +17,7 @@ public class MagazziniereController {
 		
 	}
 	
-	public void addObj(ArrayList arr) {
-		
-	}
+	
 	
 
 }
