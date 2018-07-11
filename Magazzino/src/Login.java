@@ -1,7 +1,7 @@
 
 public class Login {
 	private final String[]utenti= {"Segreteria","Magazzino","Negozio","GestoreMagazzino"};
-	private String[] password= {"Ciao","1234","negozio","pippo"};
+	private String[] password= {"Ciao","1234","negozio","pippo"};//password per accesso
 	public String getUtenti(int pos) {
 		return utenti[pos];
 	
