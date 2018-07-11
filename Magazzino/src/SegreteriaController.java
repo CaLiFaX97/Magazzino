@@ -15,10 +15,11 @@ public class SegreteriaController implements ActionListener{
 	OrderTableView tab;
 	Magazziniere mg;
 	
-	public SegreteriaController(Magazziniere mg,Segreteria seg) {	
+	public SegreteriaController(Magazziniere mg,Segreteria seg,LoginController logCtrl) {	
 		this.tab=new OrderTableView();
 		this.mg=mg;
 		this.seg=seg;
+		this.logCtrl=logCtrl;
 		seg.addNeg(neg);
 		seg.addNeg(neg1);
 		seg.addNeg(neg2);
@@ -96,7 +97,7 @@ public class SegreteriaController implements ActionListener{
 		}
 		
 		if(event.getSource()==seView.btn4) {
-			logCtrl=new LoginController();
+			
 			seView.frame.setVisible(false);
 			logCtrl.updateView(true);
 			

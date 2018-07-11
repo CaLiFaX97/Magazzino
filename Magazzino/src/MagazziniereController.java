@@ -5,7 +5,7 @@ public class MagazziniereController {
 	Magazziniere mg;
 	Segreteria seg;
 	LoginController logCtrl;
-	SegreteriaController segCrtl=new SegreteriaController(mg,seg);
+	SegreteriaController segCrtl=new SegreteriaController(mg,seg,logCtrl);
 	
 		
 	
@@ -13,6 +13,7 @@ public class MagazziniereController {
 	
 	public MagazziniereController(tipoArticolo prod,Magazziniere mg) {
 		this.prod=segCrtl.objVal();
+		this.logCtrl=logCtrl;
 		this.mg=mg;
 		
 	}

@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 
 public class NegozioView extends JFrame{
 	JLabel l3;
-	 JButton btn1;
+	 JButton btn1,btn2;
 	String title;
 	 JFrame frame;
 	 int[] qu = {1,2,3,4,5,6,7,8,9};
@@ -34,18 +34,21 @@ public class NegozioView extends JFrame{
 		  
 		
 		  btn1 = new JButton("Inserimento Ordine Articoli");
+		  btn2 = new JButton("Indietro");
 		  
 		 
 		  l3.setBounds(200, 80, 200, 30);
 		  listOrdini.setBounds(30,120,370,20);
 		  quantita.setBounds(400,120,60,20);
 		  btn1.setBounds(120, 160, 200, 20);
+		  btn2.setBounds(120, 180, 200, 20);
 		  
 		  
 		  frame.add(l3);
 		  frame.add(listOrdini);
 		  frame.add(quantita);
 		  frame.add(btn1);
+		  frame.add(btn2);
 		
 		  
 		 
@@ -56,6 +59,7 @@ public class NegozioView extends JFrame{
 	 
 	 public void addActionListener(ActionListener e) {
 		 btn1.addActionListener(e);
+		 btn2.addActionListener(e);
 		 
 	 }
 

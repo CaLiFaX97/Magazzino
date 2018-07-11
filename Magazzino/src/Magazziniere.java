@@ -41,6 +41,15 @@ public class Magazziniere {
 		
 			
 	}
+	public void  addToTableMag(MagazziniereView magView,String date,HashMap hmap,tipoArticolo articolo) {
+		
+		System.out.println("Inserimento articolo");
+		
+		magView.model.addRow(new Object[] {date, articolo.toString(),hmap.get(articolo) });
+		
+			
+	}
+	
 	
 	public void addOrderToMag(tipoArticolo art,int quantita) {
 		hmap.put(art, quantita);

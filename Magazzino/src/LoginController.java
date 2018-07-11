@@ -7,6 +7,7 @@ public class LoginController implements ActionListener{
 	SegreteriaView seView;
 	SegreteriaController seCtrl;
 	tipoArticoloView artView;
+	MagazziniereView magView;
 	Login log;
 	String user="";
 	String UserPassEntr;
@@ -23,15 +24,18 @@ public class LoginController implements ActionListener{
 		seView=new SegreteriaView();
 		artView=new tipoArticoloView();
 		this.mg = Magazziniere.getInstance();
-	    seCtrl=new SegreteriaController(mg,seg);
-	    ng=new NegozioController(mg);
+	    seCtrl=new SegreteriaController(mg,seg,this);
+	    magView=new MagazziniereView();
+	    ng=new NegozioController(mg,magView,this);
+	    vista.addActionListener(this); 
 		
 	}
+	
 	
 	public void updateView(boolean vision) {
 		
 		vista.frame.setVisible(vision);
-		vista.addActionListener(this); 
+		
 	}
 	
 	public void actionPerformed(ActionEvent event) {
@@ -45,7 +49,7 @@ public class LoginController implements ActionListener{
         	 if(event.getSource() == vista.btn1) {
         	 if(UserPassEntr.equals(log.getPassword(1))) {
         		 vista.tf1.setText("PSW corretta");
-        		 
+        		 magView.frame.setVisible(true);
         	 }
         	 else {
         		 vista.tf1.setText("PSW errata");
