@@ -36,7 +36,8 @@ public class NegozioController implements ActionListener {
 			}
 			else {
 			tipoArticolo art=mg.prodotti.get(index);
-			
+			mg.addOrderToMag(art, quant);
+			mg.seeOrderToMag();
 			JOptionPane.showMessageDialog(null, "Oggetto selezionato = "+art.toString()+"/nQuantita' selezionata = "+quant);
 			}
 			}

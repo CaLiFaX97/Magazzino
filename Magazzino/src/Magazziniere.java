@@ -42,8 +42,16 @@ public class Magazziniere {
 			
 	}
 	
-	public void addOrderToMag() {
-		
+	public void addOrderToMag(tipoArticolo art,int quantita) {
+		hmap.put(art, quantita);
+	}
+	public void seeOrderToMag() {
+		tipoArticolo prodotto;
+		int quant;
+		for(int i=0;i<prodotti.size();i++) {
+		prodotto=prodotti.get(i);
+		quant=hmap.get(prodotto);
+		}
 	}
 	
 	public String getDate() {
