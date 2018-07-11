@@ -45,6 +45,7 @@ public class LoginController implements ActionListener{
         	 if(event.getSource() == vista.btn1) {
         	 if(UserPassEntr.equals(log.getPassword(1))) {
         		 vista.tf1.setText("PSW corretta");
+        		 
         	 }
         	 else {
         		 vista.tf1.setText("PSW errata");
